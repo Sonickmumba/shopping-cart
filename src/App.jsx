@@ -12,11 +12,11 @@ function App() {
     <BrowserRouter>
       <div className="card">
         <Header />
-        <MainPage />
+        {/* <MainPage /> */}
         <Routes>
-          <Route path="/home" element={<MainPage />} />
+          <Route path="/" element={<MainPage />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/home" element={<Carts />} />
+          <Route path="/carts" element={<Carts />} />
         </Routes>
       </div>
     </BrowserRouter>
