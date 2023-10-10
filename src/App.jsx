@@ -8,7 +8,6 @@ function App() {
     <>
       <div className="card">
         <Header />
-        <p className="try">thanks sonick </p>
       </div>
     </>
   )
