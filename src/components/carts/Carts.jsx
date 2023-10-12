@@ -5,6 +5,7 @@ const Carts = ({ cartData }) => {
 
   // In Carts component
   console.log("cartData in Carts:", cartData);
+  
   return (
     <div>
       {cartData && cartData.length > 0 ? (
@@ -23,12 +24,14 @@ Carts.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
-      price: PropTypes.string.isRequired,
+      price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      // price: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
       addedToCart: PropTypes.bool.isRequired,
-      cartNumber: PropTypes.number.isRequired,
+      // cartNumber: PropTypes.string.isRequired,
+      cartNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       // Add other properties as needed
     })
   ),
