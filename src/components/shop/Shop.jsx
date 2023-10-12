@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Carts from "../carts/Carts";
 
 const Shop = () => {
   const [data, setData] = useState([]);
@@ -16,7 +17,7 @@ const Shop = () => {
     }
     fetchData();
   }, [])
-
+  
   const handleClickButton = (id) => {
     const selectedItem = data.find((item) => item.id === id);
   
@@ -28,11 +29,27 @@ const Shop = () => {
       );
     }
   };
+  const handleChange = (e) => {
+    const productId = e.target.id;
+    const cartNumber = e.target.value;
+    console.log(cartNumber);
   
+    setCartData((prevCartData) =>
+      prevCartData.map((item) =>
+        item.id === productId ? { ...item, cartNumber: cartNumber } : item
+      )
+    );
+  };
   
-  console.log(cartData);
+  console.log("cartData in Shop:", cartData);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 p-2">
+      {cartData && cartData.length > 0 ? (
+        <Carts cartData={cartData} />
+      ) : (
+        <p>Your cart is empty</p>
+      )}
+
     {data.map((item) => (
         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" key={item.id || item.title}>
             <a href="#">
@@ -53,7 +70,7 @@ const Shop = () => {
                 <div className="flex items-center justify-between">
                     <span className="text-xl font-bold text-gray-900 dark:text-white">${item.price}</span>
                     <div>
-                        <input type="number" id="small-input" min="0" className="block w-9 p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                      <input type="number" id={item.id} min="0" onChange={handleChange} className="block w-9 p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                     </div>
                     <a href="#" id={item.id} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={() => handleClickButton(item.id)}>Add to cart</a>
                 </div>
