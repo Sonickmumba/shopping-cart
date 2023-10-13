@@ -132,16 +132,6 @@ const Shop = () => {
   }, [cartData]);
 
   
-  //     setCartData((prevCartData) =>
-  //       prevCartData.some((item) => item.id === id && item.addedToCart)
-  //         ? [...prevCartData]
-  //         : [
-  //             ...prevCartData,
-  //             { ...selectedItem, addedToCart: true, cartNumber: cartNumber || 1 },
-  //           ]
-  //     );
-  //   }
-  // };
 
   // the above are working
 
