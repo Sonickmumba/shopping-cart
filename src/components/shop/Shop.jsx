@@ -93,15 +93,7 @@ const Shop = () => {
 
   
 
-  // const handleChange = (e) => {
-  //   const productId = e.target.id;
-  //   const cartNumber = e.target.value;
 
-  //   // setCartData((prevCartData) =>
-  //   //   prevCartData.map((item) =>
-  //   //     item.id === productId ? { ...item, cartNumber: cartNumber } : item
-  //   //   )
-  //   // );
 
   
 
