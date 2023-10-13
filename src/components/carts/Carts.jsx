@@ -4,7 +4,6 @@ const Carts = ({ cartData }) => {
   // const { carts } = props;
 
   // In Carts component
-  console.log("cartData in Carts:", cartData);
   
   return (
     <div>

@@ -91,18 +91,75 @@ const Shop = () => {
   const [data, setData] = useState([]);
   const [cartData, setCartData] = useState([]);
 
+  
+
+  // const handleChange = (e) => {
+  //   const productId = e.target.id;
+  //   const cartNumber = e.target.value;
+
+  //   // setCartData((prevCartData) =>
+  //   //   prevCartData.map((item) =>
+  //   //     item.id === productId ? { ...item, cartNumber: cartNumber } : item
+  //   //   )
+  //   // );
+
+  //   setCartData((prevCartData) =>
+  //     prevCartData.some((item) => item.id == productId)
+  //       ? [...prevCartData, {...item, cartNumber: cartNumber}]
+  //       : [
+  //         ...prevCartData,
+  //         { ...item, cartNumber: 1 },
+  //       ]
+  //   )
+    
+  // };
+
+  // Below are working
+
+  // const handleChange = (e) => {
+  //   const productId = e.target.id;
+  //   const cartNumber = parseInt(e.target.value, 10) || 1;
+    
+  //   setCartData((prevCartData) =>
+  //     prevCartData.map((item) =>
+  //       item.id === productId ? { ...item, cartNumber: cartNumber } : item
+  //     )
+  //   );
+  // };
+  
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("https://fakestoreapi.com/products?limit=5");
-        const fetchedData = await response.json();
-        setData(fetchedData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, []);
+    console.log("Updated Cart Data:", cartData);
+  }, [cartData]);
+
+  // const handleClickButton = (id) => {
+  //   const selectedItem = data.find((item) => item.id === id);
+  
+  //   if (selectedItem) {
+  //     const inputElement = document.getElementById(`${id}`);
+  //     const cartNumber = inputElement ? parseInt(inputElement.value, 10) : 1;
+  
+  //     setCartData((prevCartData) =>
+  //       prevCartData.some((item) => item.id === id && item.addedToCart)
+  //         ? [...prevCartData]
+  //         : [
+  //             ...prevCartData,
+  //             { ...selectedItem, addedToCart: true, cartNumber: cartNumber || 1 },
+  //           ]
+  //     );
+  //   }
+  // };
+
+  // the above are working
+
+  const handleChange = (e, id) => {
+    const cartNumber = parseInt(e.target.value, 10) || 1;
+
+    setCartData((prevCartData) =>
+      prevCartData.map((item) =>
+        item.id === id ? { ...item, cartNumber: cartNumber } : item
+      )
+    );
+  };
 
   const handleClickButton = (id) => {
     const selectedItem = data.find((item) => item.id === id);
@@ -121,18 +178,45 @@ const Shop = () => {
       );
     }
   };
+  
+  
+  
 
-  const handleChange = (e) => {
-    const productId = e.target.id;
-    const cartNumber = e.target.value;
+  
+  
+  // const handleClickButton = (id) => {
+  //   const selectedItem = data.find((item) => item.id === id);
 
-    setCartData((prevCartData) =>
-      prevCartData.map((item) =>
-        item.id === productId ? { ...item, cartNumber: cartNumber } : item
-      )
-    );
-  };
+  //   if (selectedItem) {
+  //     setCartData((prevCartData) =>
+  //       prevCartData.some((item) => item.id === id && item.addedToCart)
+  //         ? [...prevCartData]
+  //         : [
+  //             ...prevCartData,
+  //             { ...selectedItem, addedToCart: true, cartNumber: selectedItem.cartNumber || 1 },
+  //           ]
+  //     );
+  //   }
+  // };
 
+  useEffect(() => {
+    console.log("Updated Cart Data:", cartData);
+  }, [cartData]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://fakestoreapi.com/products?limit=5");
+        const fetchedData = await response.json();
+        setData(fetchedData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  console.log(cartData);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 p-2">
       {cartData && cartData.length > 0 ? (
@@ -183,8 +267,8 @@ const Shop = () => {
                   type="number"
                   id={item.id}
                   min="1"
-                  value={item.cartNumber || ""}
-                  onChange={handleChange}
+                  value={item.cartNumber}
+                  onChange={(e) => handleChange(e, item.id)}
                   className="block w-9 p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
