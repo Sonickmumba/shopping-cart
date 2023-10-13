@@ -28,7 +28,6 @@ const Carts = ({ cartData }) => {
   );
 };
 
-
 Carts.propTypes = {
   cartData: PropTypes.arrayOf(
     PropTypes.shape({
