@@ -131,12 +131,6 @@ const Shop = () => {
     console.log("Updated Cart Data:", cartData);
   }, [cartData]);
 
-  // const handleClickButton = (id) => {
-  //   const selectedItem = data.find((item) => item.id === id);
-  
-  //   if (selectedItem) {
-  //     const inputElement = document.getElementById(`${id}`);
-  //     const cartNumber = inputElement ? parseInt(inputElement.value, 10) : 1;
   
   //     setCartData((prevCartData) =>
   //       prevCartData.some((item) => item.id === id && item.addedToCart)
