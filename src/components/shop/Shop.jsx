@@ -114,18 +114,7 @@ const Shop = () => {
     
   // };
 
-  // Below are working
-
-  // const handleChange = (e) => {
-  //   const productId = e.target.id;
-  //   const cartNumber = parseInt(e.target.value, 10) || 1;
-    
-  //   setCartData((prevCartData) =>
-  //     prevCartData.map((item) =>
-  //       item.id === productId ? { ...item, cartNumber: cartNumber } : item
-  //     )
-  //   );
-  // };
+  
   
   useEffect(() => {
     console.log("Updated Cart Data:", cartData);
