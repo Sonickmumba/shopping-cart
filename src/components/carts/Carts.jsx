@@ -1,49 +1,32 @@
 import PropTypes from "prop-types";
-
-// const Carts = ({ cartData }) => {
-//   // const { carts } = props;
-
-//   // In Carts component
-  
-//   return (
-//     <div>
-//       {cartData && cartData.length > 0 ? (
-//         cartData.map((item) => (
-//           <div key={item.id}>{item.title}</div>
-//         ))
-//       ) : (
-//         <p>Your cart is empty</p>
-//       )}
-//     </div>
-//   )
-// }
-
-// Carts.jsx
 import React from "react";
 
 const Carts = ({ cartData }) => {
   const totalItems = cartData ? cartData.reduce((acc, item) => acc + item.cartNumber, 0) : 0;
 
   return (
+    <div className="bg-gray-100 p-4 rounded-lg mb-4">
+  <p className="text-xl font-semibold mb-4">Your Cart ({totalItems} items)</p>
+
+  {cartData && cartData.length > 0 ? (
     <div>
-      <p>Your Cart ({totalItems} items)</p>
-      {cartData && cartData.length > 0 ? (
-        <div>
-          {cartData.map((item) => (
-            <div key={item.id}>
-              <p>{item.title} - Quantity: {item.cartNumber}</p>
-            </div>
-          ))}
-          <button onClick={() => handleProceedToPayment()}>Proceed to Payment</button>
+      {cartData.map((item) => (
+        <div key={item.id} className="flex flex-col sm:flex-row items-center justify-between mb-2">
+          <p className="mb-2 sm:mb-0">{item.title} - Quantity: {item.cartNumber}</p>
+          <button onClick={() => handleRemoveFromCart(item.id)} className="text-red-500 sm:ml-2">Remove</button>
         </div>
-      ) : (
-        <p>Your cart is empty</p>
-      )}
+      ))}
+      <button onClick={() => handleProceedToPayment()} className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 sm:mt-0">
+        Proceed to Payment
+      </button>
     </div>
+  ) : (
+    <p>Your cart is empty</p>
+  )}
+</div>
+
   );
 };
-
-// export default Carts;
 
 
 Carts.propTypes = {
