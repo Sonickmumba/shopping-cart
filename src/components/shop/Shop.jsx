@@ -13,9 +13,6 @@ const Shop = () => {
 
   
   
-  useEffect(() => {
-    console.log("Updated Cart Data:", cartData);
-  }, [cartData]);
 
   
 
