@@ -103,16 +103,7 @@ const Shop = () => {
   //   //   )
   //   // );
 
-  //   setCartData((prevCartData) =>
-  //     prevCartData.some((item) => item.id == productId)
-  //       ? [...prevCartData, {...item, cartNumber: cartNumber}]
-  //       : [
-  //         ...prevCartData,
-  //         { ...item, cartNumber: 1 },
-  //       ]
-  //   )
-    
-  // };
+  
 
   
   
