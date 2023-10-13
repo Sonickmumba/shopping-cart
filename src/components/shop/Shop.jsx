@@ -184,20 +184,7 @@ const Shop = () => {
 
   
   
-  // const handleClickButton = (id) => {
-  //   const selectedItem = data.find((item) => item.id === id);
-
-  //   if (selectedItem) {
-  //     setCartData((prevCartData) =>
-  //       prevCartData.some((item) => item.id === id && item.addedToCart)
-  //         ? [...prevCartData]
-  //         : [
-  //             ...prevCartData,
-  //             { ...selectedItem, addedToCart: true, cartNumber: selectedItem.cartNumber || 1 },
-  //           ]
-  //     );
-  //   }
-  // };
+  
 
   useEffect(() => {
     console.log("Updated Cart Data:", cartData);
