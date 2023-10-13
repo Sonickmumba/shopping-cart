@@ -5,19 +5,6 @@ const Shop = () => {
   const [data, setData] = useState([]);
   const [cartData, setCartData] = useState([]);
 
-  
-
-
-
-  
-
-  
-  
-
-  
-
-  // the above are working
-
   const handleChange = (e, id) => {
     const cartNumber = parseInt(e.target.value, 10) || 1;
 
@@ -46,13 +33,6 @@ const Shop = () => {
     }
   };
   
-  
-  
-
-  
-  
-  
-
   useEffect(() => {
     console.log("Updated Cart Data:", cartData);
   }, [cartData]);
