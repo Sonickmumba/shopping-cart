@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Carts = ({ cartData }) => {
   const totalItems = cartData ? cartData.reduce((acc, item) => acc + item.cartNumber, 0) : 0;
@@ -75,7 +76,7 @@ const Carts = ({ cartData }) => {
             			<div className="flex justify-between items-center mt-6 pt-6 border-t"> 
             				<div className="flex items-center">
             					<i className="fa fa-arrow-left text-sm pr-2"></i>
-            					<span className="text-md  font-medium text-blue-500">Continue Shopping</span>
+            					<Link to="/shop"><span className="text-md  font-medium text-blue-500">Continue Shopping</span></Link>
             				</div>
 
             				<div className="flex justify-center items-end">
