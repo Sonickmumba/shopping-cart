@@ -10,6 +10,8 @@ import About from './components/about/About';
 function App() {
   const [data, setData] = useState([]);
   const [cartData, setCartData] = useState([]);
+  const totalItems = cartData ? cartData.reduce((acc, item) => acc + item.cartNumber, 0) : 0;
+  console.log(totalItems);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,7 +60,7 @@ function App() {
     <>
       <BrowserRouter>
         <div className="card">
-          <Header />
+          <Header totalItems={totalItems}/>
           <Routes>
             <Route
               path="/"
