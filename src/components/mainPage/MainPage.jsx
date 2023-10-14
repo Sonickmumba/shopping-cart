@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 const MainPage = () => {
   return (
     <>
-    <div className="main-page mx-20 w-3/4 mr-auto ml-auto h-60 bg-[#cffafe] p-8 rounded-lg">
+    <div className="main-page mx-20 w-1/2 mr-auto ml-auto h-60 bg-[#cffafe] p-8 rounded-lg">
       <p className="text-center m-5 font-bold text-5xl">
         Welcome to our online shopping mall
       </p>
