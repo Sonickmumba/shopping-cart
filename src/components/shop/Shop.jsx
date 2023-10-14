@@ -1,4 +1,4 @@
-const Shop = ( { data, cartData, handleChange, handleClickButton }) => {
+const Shop = ( { data, handleChange, handleClickButton }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 p-2">
       {/* {cartData && cartData.length > 0 ? (
