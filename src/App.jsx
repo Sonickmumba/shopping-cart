@@ -43,7 +43,8 @@ function App() {
     fetchData();
   }, []);
 
-  const handleClickButton = (id) => {
+  const handleClickButton = (e,id) => {
+    e.preventDefault();
     const selectedItem = data.find((item) => item.id === id);
 
     if (selectedItem) {
