@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const Shop = ( { data, handleChange, handleClickButton }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 p-2">
@@ -68,6 +69,35 @@ const Shop = ( { data, handleChange, handleClickButton }) => {
       ))}
     </div>
   );
+};
+
+Shop.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      rating: PropTypes.shape({
+        rate: PropTypes.number.isRequired,
+      }).isRequired,
+      image: PropTypes.string.isRequired,
+      cartNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    })
+  ).isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleClickButton: PropTypes.func.isRequired,
+  cartData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      category: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      addedToCart: PropTypes.bool.isRequired,
+      cartNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    })
+  ).isRequired,
 };
 
 export default Shop;
