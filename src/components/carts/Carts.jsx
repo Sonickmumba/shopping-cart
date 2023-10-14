@@ -8,27 +8,6 @@ const Carts = ({ cartData }) => {
     : 0;
 
   return (
-    // <div className="bg-gray-100 p-4 rounded-lg mb-4">
-    //   <p className="text-xl font-semibold mb-4">Your Cart ({totalItems} items)</p>
-
-    //   {cartData && cartData.length > 0 ? (
-    //     <div>
-    //       {cartData.map((item) => (
-    //         <div key={item.id} className="flex flex-col sm:flex-row items-center justify-between mb-2">
-    //           <p className="mb-2 sm:mb-0">{item.title} - Quantity: {item.cartNumber}</p>
-    //           <button onClick={() => handleRemoveFromCart(item.id)} className="text-red-500 sm:ml-2">Remove</button>
-    //         </div>
-    //       ))}
-    //       <button onClick={() => handleProceedToPayment()} className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 sm:mt-0">
-    //         Proceed to Payment
-    //       </button>
-    //     </div>
-    //       ) : (
-    //         <p>Your cart is empty</p>
-    //   )}
-    // </div>
-    // Added
-
     <div className="h-screen bg-gray-300">
       <div className="py-12">
         <div className="max-w-md mx-auto bg-gray-100 shadow-lg rounded-lg  md:max-w-5xl">
