@@ -86,18 +86,18 @@ Shop.propTypes = {
   ).isRequired,
   handleChange: PropTypes.func.isRequired,
   handleClickButton: PropTypes.func.isRequired,
-  cartData: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      category: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-      addedToCart: PropTypes.bool.isRequired,
-      cartNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    })
-  ).isRequired,
+  // cartData: PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     id: PropTypes.number.isRequired,
+  //     title: PropTypes.string.isRequired,
+  //     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  //     category: PropTypes.string.isRequired,
+  //     description: PropTypes.string.isRequired,
+  //     image: PropTypes.string.isRequired,
+  //     addedToCart: PropTypes.bool.isRequired,
+  //     cartNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  //   })
+  // ).isRequired,
 };
 
 export default Shop;

@@ -6,7 +6,10 @@ const Carts = ({ cartData }) => {
   const totalCost = cartData
     ? cartData.reduce((cost, item) => cost + item.price, 0)
     : 0;
-
+  const handleChange = (e, id) => {
+    e.preventDefault();
+    console.log(id);
+  }
   return (
     <div className="h-screen bg-gray-300">
       <div className="py-12">
@@ -42,7 +45,7 @@ const Carts = ({ cartData }) => {
                           <span className="font-semibold">-</span>
                           <input
                             type="text"
-                            // onChange={(e) => handleChange(e, item.id)}
+                            onChange={(e) => handleChange(e, item.id)}
                             className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
                             value="1"
                           />
