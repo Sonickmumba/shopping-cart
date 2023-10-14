@@ -53,7 +53,7 @@ const Carts = ({ cartData }) => {
                         </div>
                         <div className="pr-8 ">
                           <span className="text-xs font-medium">
-                            {item.price}
+                            ${item.price}
                           </span>
                         </div>
                         {/* onClick={() => handleRemoveFromCart(item.id)} */}
