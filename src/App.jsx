@@ -7,25 +7,6 @@ import Shop from './components/shop/Shop';
 import Carts from './components/carts/Carts';
 import About from './components/about/About';
 
-// function App() {
-
-//   return (
-//     <>
-//     <BrowserRouter>
-//       <div className="card">
-//         <Header />
-//         <Routes>
-//           <Route path="/" element={<MainPage />} />
-//           <Route path="/about" element={<About />} />
-//           <Route path="/shop" element={<Shop />} />
-//           <Route path="/carts" element={<Carts />} />
-//         </Routes>
-//       </div>
-//     </BrowserRouter>
-//     </>
-//   )
-// }
-
 function App() {
   const [data, setData] = useState([]);
   const [cartData, setCartData] = useState([]);
