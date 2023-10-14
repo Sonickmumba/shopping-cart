@@ -81,7 +81,7 @@ const Carts = ({ cartData }) => {
                       </span>
                       <span className="text-lg font-bold text-gray-800 ">
                         {" "}
-                        ${totalCost}
+                        ${totalCost.toFixed(2)}
                       </span>
                     </div>
                   </div>
