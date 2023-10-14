@@ -41,7 +41,7 @@ const Carts = ({ cartData }) => {
             			<h1 className="text-xl font-medium ">Shopping Cart</h1>
                   {/* start */}
                   {cartData.map((item) => (
-                    <div key={item.id} className="flex justify-between items-center mt-6 pt-6">
+                    <div key={item.id} className="flex justify-between items-center mt-6 pt-6 border-t">
                       <div className="flex  items-center">
                         <img src={`${item.image}`} width="60" className="rounded-full " />
 
@@ -64,7 +64,7 @@ const Carts = ({ cartData }) => {
                           
                           <span className="text-xs font-medium">{item.price}</span>
                         </div>
-                        <div>
+                        <div onClick={() => handleRemoveFromCart(item.id)}>
                           <i className="fa fa-close text-xs font-medium"></i>
                         </div>
                       </div>                    
@@ -152,7 +152,7 @@ const Carts = ({ cartData }) => {
             				</div>
             				
             			</div>
-            			<button className="h-12 w-full bg-blue-500 rounded focus:outline-none text-white hover:bg-blue-600">Check Out</button>          			
+            			<button className="h-12 w-full bg-blue-500 rounded focus:outline-none text-white hover:bg-blue-600" onClick={() => handleProceedToPayment()}>Check Out</button>          			
             		</div>            		
             	</div>  
            </div>
