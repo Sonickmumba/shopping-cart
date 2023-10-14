@@ -11,7 +11,6 @@ function App() {
   const [data, setData] = useState([]);
   const [cartData, setCartData] = useState([]);
   const totalItems = cartData ? cartData.reduce((acc, item) => acc + item.cartNumber, 0) : 0;
-  console.log(totalItems);
 
   useEffect(() => {
     const fetchData = async () => {
