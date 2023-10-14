@@ -112,9 +112,9 @@ const Carts = ({ cartData }) => {
                       </div>
                       <div className="flex justify-between items-center mt-3">
                         <span className="text-xs  text-gray-200">
-                          Giga Tamarashvili
+                          Sonick Mumba
                         </span>
-                        <span className="text-xs  text-gray-200">12/18</span>
+                        <span className="text-xs  text-gray-200">12/28</span>
                       </div>
                     </div>
                     <div className="flex justify-center  items-center flex-col">
@@ -135,7 +135,7 @@ const Carts = ({ cartData }) => {
                     <input
                       type="text"
                       className="focus:outline-none w-full h-6 bg-gray-800 text-white placeholder-gray-300 text-sm border-b border-gray-600 py-4"
-                      placeholder="Giga Tamarashvili"
+                      placeholder="Sonick Mumba"
                     />
                   </div>
                   <div className="flex justify-center flex-col pt-3">
