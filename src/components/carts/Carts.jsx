@@ -63,7 +63,7 @@ const Carts = ({ cartData }) => {
                           <span className="font-semibold">-</span>
                           <input
                             type="text"
-                            onChange={(e) => handleChange(e, item.id)}
+                            // onChange={(e) => handleChange(e, item.id)}
                             className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
                             value="1"
                           />
@@ -74,7 +74,8 @@ const Carts = ({ cartData }) => {
                             {item.price}
                           </span>
                         </div>
-                        <div onClick={() => handleRemoveFromCart(item.id)}>
+                        {/* onClick={() => handleRemoveFromCart(item.id)} */}
+                        <div>
                           <i className="fa fa-close text-xs font-medium"></i>
                         </div>
                       </div>
@@ -194,7 +195,7 @@ const Carts = ({ cartData }) => {
                   </div>
                   <button
                     className="h-12 w-full bg-blue-500 rounded focus:outline-none text-white hover:bg-blue-600"
-                    onClick={() => handleProceedToPayment()}
+                    // onClick={() => handleProceedToPayment()}
                   >
                     Check Out
                   </button>
