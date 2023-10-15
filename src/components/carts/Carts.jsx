@@ -13,10 +13,14 @@ const Carts = ({ cartData }) => {
   //   e.preventDefault();
   //   console.log(id);
   // }
-  const handleClick = (e) => {
+  const handleClick = (e,id) => {
     e.preventDefault();
-    console.log("sonick");
-    setCounter((counter) => counter + 1);
+    const itemSelected = cartData.find((item) => item.id == id);
+    if (itemSelected) {
+      console.log("sonick");
+      setCounter((counter) => counter + 1);
+    }
+    
   }
   console.log(counter);
   return (
@@ -59,7 +63,7 @@ const Carts = ({ cartData }) => {
                             className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
                             value={ counter || item.cartNumber}
                           />
-                          <span className="font-semibold" onClick={handleClick}>+</span>
+                          <span className="font-semibold" onClick={(e) => handleClick(e,item.id)}>+</span>
                         </div>
                         <div className="pr-8 ">
                           <span className="text-xs font-medium">
