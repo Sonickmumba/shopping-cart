@@ -8,7 +8,7 @@ const Carts = ({ cartData }) => {
     ? cartData.reduce((cost, item) => cost + item.price, 0)
     : 0;
   
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   // const handleChange = (e, id) => {
   //   e.preventDefault();
   //   console.log(id);
