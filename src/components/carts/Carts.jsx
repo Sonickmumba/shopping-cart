@@ -2,11 +2,10 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const Carts = ({ cartData }) => {
-  // const totalItems = cartData ? cartData.reduce((acc, item) => acc + item.cartNumber, 0) : 0;
   const totalCost = cartData
     ? cartData.reduce((cost, item) => cost + item.price, 0)
     : 0;
-  const handleChange = (e, id) => {
+  const handleChange = (e,id) => {
     e.preventDefault();
     console.log(id);
   }
@@ -45,7 +44,7 @@ const Carts = ({ cartData }) => {
                           <span className="font-semibold">-</span>
                           <input
                             type="text"
-                            onChange={(e) => handleChange(e, item.id)}
+                            onChange={(e) => handleChange(e,item.id)}
                             className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
                             value="1"
                           />
@@ -53,7 +52,7 @@ const Carts = ({ cartData }) => {
                         </div>
                         <div className="pr-8 ">
                           <span className="text-xs font-medium">
-                            {item.price}
+                            ${item.price}
                           </span>
                         </div>
                         {/* onClick={() => handleRemoveFromCart(item.id)} */}
@@ -81,7 +80,7 @@ const Carts = ({ cartData }) => {
                       </span>
                       <span className="text-lg font-bold text-gray-800 ">
                         {" "}
-                        ${totalCost}
+                        ${totalCost.toFixed(2)}
                       </span>
                     </div>
                   </div>
@@ -112,9 +111,9 @@ const Carts = ({ cartData }) => {
                       </div>
                       <div className="flex justify-between items-center mt-3">
                         <span className="text-xs  text-gray-200">
-                          Giga Tamarashvili
+                          Sonick Mumba
                         </span>
-                        <span className="text-xs  text-gray-200">12/18</span>
+                        <span className="text-xs  text-gray-200">12/28</span>
                       </div>
                     </div>
                     <div className="flex justify-center  items-center flex-col">
@@ -135,7 +134,7 @@ const Carts = ({ cartData }) => {
                     <input
                       type="text"
                       className="focus:outline-none w-full h-6 bg-gray-800 text-white placeholder-gray-300 text-sm border-b border-gray-600 py-4"
-                      placeholder="Giga Tamarashvili"
+                      placeholder="Sonick Mumba"
                     />
                   </div>
                   <div className="flex justify-center flex-col pt-3">

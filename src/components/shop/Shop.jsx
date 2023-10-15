@@ -15,7 +15,7 @@ const Shop = ( { data, handleChange, handleClickButton }) => {
         >
           <a href="#">
             <img
-              className="p-4 max-h-100 object-cover w-full rounded-t-lg"
+              className="p-4 max-h-90 object-cover w-full rounded-t-lg"
               src={`${item.image}`}
               alt="product image"
             />
@@ -51,7 +51,7 @@ const Shop = ( { data, handleChange, handleClickButton }) => {
                   id={item.id}
                   min="1"
                   value={item.cartNumber}
-                  onChange={(e) => handleChange(e, item.id)}
+                  onChange={() => handleChange(item.id)}
                   className="block w-9 p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
@@ -59,7 +59,7 @@ const Shop = ( { data, handleChange, handleClickButton }) => {
                 href="#"
                 id={item.id}
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                onClick={() => handleClickButton(item.id)}
+                onClick={(e) => handleClickButton(e, item.id)}
               >
                 Add to cart
               </a>
