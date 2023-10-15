@@ -45,11 +45,10 @@ const Carts = ({ cartData }) => {
                           <span className="font-semibold">-</span>
                           <input
                             type="text"
-                            onChange={(e) => handleChange(e, item.id)}
                             className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
                             value={item.cartNumber}
                           />
-                          <span className="font-semibold">+</span>
+                          <span className="font-semibold" onClick={(e) => handleChange(e, item.id)}>+</span>
                         </div>
                         <div className="pr-8 ">
                           <span className="text-xs font-medium">
