@@ -9,15 +9,16 @@ const Carts = ({ cartData }) => {
     : 0;
   
   const [counter, setCounter] = useState(0);
-  const handleChange = (e, id) => {
-    e.preventDefault();
-    console.log(id);
-  }
+  // const handleChange = (e, id) => {
+  //   e.preventDefault();
+  //   console.log(id);
+  // }
   const handleClick = (e) => {
     e.preventDefault();
     console.log("sonick");
     setCounter((counter) => counter + 1);
   }
+  console.log(counter);
   return (
     <div className="h-screen bg-gray-300">
       <div className="py-12">
@@ -53,9 +54,10 @@ const Carts = ({ cartData }) => {
                           <span className="font-semibold">-</span>
                           <input
                             type="text"
-                            onChange={(e) => handleChange(e, item.id)}
+                            // onChange={(e) => handleChange(e, item.id)}
+                            onChange={(e) => setCounter(e.target.value)}
                             className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
-                            value={item.cartNumber}
+                            value={ counter || item.cartNumber}
                           />
                           <span className="font-semibold" onClick={handleClick}>+</span>
                         </div>
