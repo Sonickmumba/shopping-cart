@@ -47,7 +47,7 @@ const Carts = ({ cartData }) => {
                             type="text"
                             onChange={(e) => handleChange(e, item.id)}
                             className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
-                            value="1"
+                            value={item.cartNumber}
                           />
                           <span className="font-semibold">+</span>
                         </div>
