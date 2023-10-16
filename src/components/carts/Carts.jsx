@@ -1,28 +1,26 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Carts = ({ cartData }) => {
+const Carts = ({ cartData, updateCartData }) => {
   // const totalItems = cartData ? cartData.reduce((acc, item) => acc + item.cartNumber, 0) : 0;
   const totalCost = cartData
     ? cartData.reduce((cost, item) => cost + item.price, 0)
     : 0;
   
-  const [counter, setCounter] = useState(1);
+  // const [counter, setCounter] = useState(1);
   // const handleChange = (e, id) => {
   //   e.preventDefault();
   //   console.log(id);
   // }
-  const handleClick = (e,id) => {
+  const handleClick = (e, id) => {
     e.preventDefault();
-    const itemSelected = cartData.find((item) => item.id == id);
-    if (itemSelected) {
-      console.log("sonick");
-      setCounter((counter) => counter + 1);
-    }
-    
-  }
-  console.log(counter);
+    const updatedCartData = cartData.map((item) =>
+      item.id === id ? { ...item, cartNumber: item.cartNumber + 1 } : item
+    );
+    updateCartData(updatedCartData);
+  };
+  // console.log(counter);
   return (
     <div className="h-screen bg-gray-300">
       <div className="py-12">
@@ -59,9 +57,9 @@ const Carts = ({ cartData }) => {
                           <input
                             type="text"
                             // onChange={(e) => handleChange(e, item.id)}
-                            onChange={(e) => setCounter(e.target.value)}
+                            // onChange={handleChange}
                             className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
-                            value={ counter || item.cartNumber}
+                            value={item.cartNumber}
                           />
                           <span className="font-semibold" onClick={(e) => handleClick(e,item.id)}>+</span>
                         </div>
@@ -222,6 +220,7 @@ Carts.propTypes = {
       // Add other properties as needed
     })
   ),
+  updateCartData: PropTypes.func.isRequired,
 };
 
 export default Carts;
