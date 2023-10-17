@@ -59,7 +59,7 @@ function App() {
   const handleCloseButton = (e, id) => {
     e.preventDefault();
     const updatedCartData = cartData.filter((item) => item.id !== id);
-    // setCartData(updatedCartData);
+    setCartData(updatedCartData);
   }
 
   return (
