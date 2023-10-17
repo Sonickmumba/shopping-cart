@@ -12,11 +12,6 @@ const Carts = ({ cartData }) => {
     e.preventDefault();
     console.log(id);
   }
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   console.log("sonick");
-  //   setCounter((counter) => counter + 1);
-  // }
 
   return (
     <div className="h-screen bg-gray-300">
