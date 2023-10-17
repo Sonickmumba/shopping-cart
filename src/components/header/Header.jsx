@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
 
 const Header = ({ totalCarts }) => {
   return (
@@ -15,5 +16,9 @@ const Header = ({ totalCarts }) => {
 
   )
 }
+
+Header.propTypes = {
+  totalCarts: PropTypes.number.isRequired
+};
 
 export default Header

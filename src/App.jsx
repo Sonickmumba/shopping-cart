@@ -10,11 +10,6 @@ import About from './components/about/About';
 function App() {
   const [data, setData] = useState([]);
   const [cartData, setCartData] = useState([]);
-  // const totalItems = cartData ? cartData.reduce((acc, item) => acc + item.cartNumber, 0) : 0;
-
-  const updateCartData = (newCartData) => {
-    setCartData(newCartData);
-  };
 
   useEffect(() => {
     const fetchData = async () => {

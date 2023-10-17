@@ -212,7 +212,7 @@ Carts.propTypes = {
       // Add other properties as needed
     })
   ),
-  updateCartData: PropTypes.func.isRequired,
+  handleCloseButton: PropTypes.func.isRequired,
 };
 
 export default Carts;
