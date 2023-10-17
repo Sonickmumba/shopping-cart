@@ -13,6 +13,11 @@ const Carts = ({ cartData }) => {
     console.log(id);
   }
 
+  const handleCloseButton = (e, id) => {
+    e.preventDefault();
+    console.log("clicked");
+  }
+
   return (
     <div className="h-screen bg-gray-300">
       <div className="py-12">
@@ -48,7 +53,7 @@ const Carts = ({ cartData }) => {
                           <span className="font-semibold">-</span>
                           <input
                             type="text"
-                            // onChange={(e) => handleChange(e, item.id)}
+                            onChange={(e) => handleChange(e, item.id)}
                             // onChange={(e) => setCounter(e.target.value)}
                             className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
                             value={item.cartNumber}
@@ -62,7 +67,7 @@ const Carts = ({ cartData }) => {
                         </div>
                         {/* onClick={() => handleRemoveFromCart(item.id)} */}
                         <div>
-                          <i className="fa fa-close text-xs font-medium"></i>
+                          <button type="button" onClick={(e) => handleCloseButton(e, item.id)}><i className="fa fa-close text-xs font-medium"></i></button>
                         </div>
                       </div>
                     </div>
