@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Carts = ({ cartData, handleCloseButton }) => {
@@ -212,6 +212,7 @@ Carts.propTypes = {
       // Add other properties as needed
     })
   ),
+  updateCartData: PropTypes.func.isRequired,
 };
 
 export default Carts;

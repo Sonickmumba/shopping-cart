@@ -12,6 +12,10 @@ function App() {
   const [cartData, setCartData] = useState([]);
   // const totalItems = cartData ? cartData.reduce((acc, item) => acc + item.cartNumber, 0) : 0;
 
+  const updateCartData = (newCartData) => {
+    setCartData(newCartData);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -83,6 +87,7 @@ function App() {
             <Route
               path="/carts"
               element={<Carts cartData={cartData} handleCloseButton={handleCloseButton} />}
+              // element={<Carts cartData={cartData} updateCartData={updateCartData} />}
             />
           </Routes>
         </div>
