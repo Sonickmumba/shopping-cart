@@ -6,7 +6,7 @@ const Carts = ({ cartData, handleCloseButton }) => {
   const totalCost = cartData
     ? cartData.reduce((cost, item) => cost + item.price * item.cartNumber, 0)
     : 0;
-  
+
   const handleChange = (e, id) => {
     e.preventDefault();
     console.log(id);
