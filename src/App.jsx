@@ -82,7 +82,6 @@ function App() {
             <Route
               path="/carts"
               element={<Carts cartData={cartData} handleCloseButton={handleCloseButton} />}
-              // element={<Carts cartData={cartData} updateCartData={updateCartData} />}
             />
           </Routes>
         </div>
