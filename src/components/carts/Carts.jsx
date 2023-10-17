@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Carts = ({ cartData }) => {
+const Carts = ({ cartData, handleCloseButton }) => {
   // const totalItems = cartData ? cartData.reduce((acc, item) => acc + item.cartNumber, 0) : 0;
   const totalCost = cartData
     ? cartData.reduce((cost, item) => cost + item.price, 0)
@@ -11,11 +11,6 @@ const Carts = ({ cartData }) => {
   const handleChange = (e, id) => {
     e.preventDefault();
     console.log(id);
-  }
-
-  const handleCloseButton = (e, id) => {
-    e.preventDefault();
-    console.log("clicked");
   }
 
   return (

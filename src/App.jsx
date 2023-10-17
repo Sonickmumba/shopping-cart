@@ -55,6 +55,13 @@ function App() {
     );
   };
 
+
+  const handleCloseButton = (e, id) => {
+    e.preventDefault();
+    // const updatedCartData = cartData.filter((item) => item.id !== id);
+    // setCartData(updatedCartData);
+  }
+
   return (
     <>
       <BrowserRouter>
@@ -75,7 +82,7 @@ function App() {
             />
             <Route
               path="/carts"
-              element={<Carts cartData={cartData} />}
+              element={<Carts cartData={cartData} handleCloseButton={handleCloseButton} />}
             />
           </Routes>
         </div>
