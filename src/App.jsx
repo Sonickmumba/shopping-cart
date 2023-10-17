@@ -59,7 +59,7 @@ function App() {
     <>
       <BrowserRouter>
         <div className="card">
-          <Header totalItems={totalItems}/>
+          <Header totalCarts={cartData.length}/>
           <Routes>
             <Route
               path="/"
