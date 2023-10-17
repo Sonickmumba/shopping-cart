@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Carts = ({ cartData, handleCloseButton }) => {
   // const totalItems = cartData ? cartData.reduce((acc, item) => acc + item.cartNumber, 0) : 0;
   const totalCost = cartData
-    ? cartData.reduce((cost, item) => cost + item.price, 0)
+    ? cartData.reduce((cost, item) => cost + item.price * item.cartNumber, 0)
     : 0;
   
   const handleChange = (e, id) => {
@@ -57,7 +57,7 @@ const Carts = ({ cartData, handleCloseButton }) => {
                         </div>
                         <div className="pr-8 ">
                           <span className="text-xs font-medium">
-                            ${item.price}
+                            ${item.price * item.cartNumber}
                           </span>
                         </div>
                         {/* onClick={() => handleRemoveFromCart(item.id)} */}
