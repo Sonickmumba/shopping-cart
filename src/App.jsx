@@ -10,7 +10,6 @@ import About from './components/about/About';
 function App() {
   const [data, setData] = useState([]);
   const [cartData, setCartData] = useState([]);
-  const totalItems = cartData ? cartData.reduce((acc, item) => acc + item.cartNumber, 0) : 0;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,11 +54,18 @@ function App() {
     );
   };
 
+
+  const handleCloseButton = (e, id) => {
+    e.preventDefault();
+    const updatedCartData = cartData.filter((item) => item.id !== id);
+    setCartData(updatedCartData);
+  }
+
   return (
     <>
       <BrowserRouter>
         <div className="card">
-          <Header totalItems={totalItems}/>
+          <Header totalCarts={cartData.length}/>
           <Routes>
             <Route
               path="/"
@@ -75,7 +81,7 @@ function App() {
             />
             <Route
               path="/carts"
-              element={<Carts cartData={cartData} />}
+              element={<Carts cartData={cartData} handleCloseButton={handleCloseButton} />}
             />
           </Routes>
         </div>
@@ -85,6 +91,3 @@ function App() {
 }
 
 export default App;
-
-
-// export default App

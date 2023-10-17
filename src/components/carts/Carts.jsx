@@ -1,14 +1,18 @@
 import PropTypes from "prop-types";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Carts = ({ cartData }) => {
+const Carts = ({ cartData, handleCloseButton }) => {
+  // const totalItems = cartData ? cartData.reduce((acc, item) => acc + item.cartNumber, 0) : 0;
   const totalCost = cartData
     ? cartData.reduce((cost, item) => cost + item.price, 0)
     : 0;
-  const handleChange = (e,id) => {
+  
+  const handleChange = (e, id) => {
     e.preventDefault();
     console.log(id);
   }
+
   return (
     <div className="h-screen bg-gray-300">
       <div className="py-12">
@@ -44,11 +48,12 @@ const Carts = ({ cartData }) => {
                           <span className="font-semibold">-</span>
                           <input
                             type="text"
-                            onChange={(e) => handleChange(e,item.id)}
+                            onChange={(e) => handleChange(e, item.id)}
+                            // onChange={(e) => setCounter(e.target.value)}
                             className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
-                            value="1"
+                            value={item.cartNumber}
                           />
-                          <span className="font-semibold">+</span>
+                          <span className="font-semibold" onClick={handleChange}>+</span>
                         </div>
                         <div className="pr-8 ">
                           <span className="text-xs font-medium">
@@ -57,7 +62,7 @@ const Carts = ({ cartData }) => {
                         </div>
                         {/* onClick={() => handleRemoveFromCart(item.id)} */}
                         <div>
-                          <i className="fa fa-close text-xs font-medium"></i>
+                          <button type="button" onClick={(e) => handleCloseButton(e, item.id)}><i className="fa fa-close text-xs font-medium"></i></button>
                         </div>
                       </div>
                     </div>
@@ -207,6 +212,7 @@ Carts.propTypes = {
       // Add other properties as needed
     })
   ),
+  handleCloseButton: PropTypes.func.isRequired,
 };
 
 export default Carts;
