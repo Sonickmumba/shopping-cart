@@ -20,7 +20,7 @@ const Carts = ({ cartData, handleCloseButton }) => {
             <div className="w-full p-4 px-5 py-5">
               <div className="md:grid md:grid-cols-3 gap-2 ">
                 <div className="col-span-2 p-5">
-                  {cartData.length === 0 ? (<h1>soid</h1>) : (
+                  {cartData.length === 0 ? (<h1>Your cart is empty!</h1>) : (
                     <>
                       <h1 className="text-xl font-medium ">Shopping Cart</h1>
                       {/* start */}
