@@ -57,7 +57,7 @@ const Carts = ({ cartData, handleCloseButton, handleIncrement, handleDecrement})
                             </div>
                             <div className="pr-8 ">
                               <span className="text-xs font-medium">
-                                ${item.price * item.cartNumber}
+                              ${ (item.price * item.cartNumber).toFixed(2) }
                               </span>
                             </div>
                             {/* onClick={() => handleRemoveFromCart(item.id)} */}

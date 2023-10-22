@@ -64,7 +64,7 @@ function App() {
   const handleIncrement = (itemId) => {
     // Find the item in the cartData array
     const updatedCartData = cartData.map((item) => {
-      if (item.id === itemId && item.cartNumber <= 10) {
+      if (item.id === itemId && item.cartNumber < 10) {
         // Increment the cartNumber for the specific item
         return { ...item, cartNumber: item.cartNumber + 1 };
       }
