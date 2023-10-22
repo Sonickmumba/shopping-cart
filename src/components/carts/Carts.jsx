@@ -207,6 +207,8 @@ Carts.propTypes = {
     })
   ),
   handleCloseButton: PropTypes.func.isRequired,
+  handleIncrement: PropTypes.func.isRequired,
+  handleDecrement: PropTypes.func.isRequired,
 };
 
 export default Carts;
