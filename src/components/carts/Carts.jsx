@@ -69,8 +69,6 @@ const Carts = ({ cartData, handleCloseButton, handleIncrement, handleDecrement})
                     </>
                   )}
 
-                  {/* end here */}
-
                   <div className="flex justify-between items-center mt-6 pt-6 border-t">
                     <div className="flex items-center">
                       <i className="fa fa-arrow-left text-sm pr-2"></i>
