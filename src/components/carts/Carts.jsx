@@ -7,10 +7,10 @@ const Carts = ({ cartData, handleCloseButton, handleIncrement, handleDecrement})
     ? cartData.reduce((cost, item) => cost + item.price * item.cartNumber, 0)
     : 0;
 
-  const handleChange = (e, id) => {
-    e.preventDefault();
-    console.log(e.target.value);
-  }
+  // const handleChange = (e, id) => {
+  //   e.preventDefault();
+  //   console.log(e.target.value);
+  // }
 
   return (
     <div className="h-screen bg-gray-300">
@@ -48,10 +48,11 @@ const Carts = ({ cartData, handleCloseButton, handleIncrement, handleDecrement})
                               <span className="font-semibold" onClick={() => handleDecrement(item.id)}>-</span>
                               <input
                                 type="text"
-                                onChange={(e) => handleChange(e, item.id)}
+                                // onChange={(e) => handleChange(e, item.id)}
                                 // onChange={(e) => setCounter(e.target.value)}
                                 className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
                                 value={item.cartNumber}
+                                readOnly
                               />
                               <span className="font-semibold" onClick={() => handleIncrement(item.id)}>+</span>
                             </div>
