@@ -20,52 +20,56 @@ const Carts = ({ cartData, handleCloseButton }) => {
             <div className="w-full p-4 px-5 py-5">
               <div className="md:grid md:grid-cols-3 gap-2 ">
                 <div className="col-span-2 p-5">
-                  <h1 className="text-xl font-medium ">Shopping Cart</h1>
-                  {/* start */}
-                  {cartData.map((item) => (
-                    <div
-                      key={item.id}
-                      className="flex justify-between items-center mt-6 pt-6 border-t"
-                    >
-                      <div className="flex  items-center">
-                        <img
-                          src={`${item.image}`}
-                          width="60"
-                          className="rounded-full "
-                        />
-                        <div className="flex flex-col ml-3">
-                          <span className="md:text-md font-medium">
-                            {item.title}
-                          </span>
-                          <span className="text-xs font-light text-gray-400">
-                            #41551
-                          </span>
+                  {cartData.length === 0 ? (<h1>soid</h1>) : (
+                    <>
+                      <h1 className="text-xl font-medium ">Shopping Cart</h1>
+                      {/* start */}
+                      {cartData.map((item) => (
+                        <div
+                          key={item.id}
+                          className="flex justify-between items-center mt-6 pt-6 border-t"
+                        >
+                          <div className="flex  items-center">
+                            <img
+                              src={`${item.image}`}
+                              width="60"
+                              className="rounded-full "
+                            />
+                            <div className="flex flex-col ml-3">
+                              <span className="md:text-md font-medium">
+                                {item.title}
+                              </span>
+                              <span className="text-xs font-light text-gray-400">
+                                #41551
+                              </span>
+                            </div>
+                          </div>
+                          <div className="flex justify-center items-center">
+                            <div className="pr-8 flex ">
+                              <span className="font-semibold">-</span>
+                              <input
+                                type="text"
+                                onChange={(e) => handleChange(e, item.id)}
+                                // onChange={(e) => setCounter(e.target.value)}
+                                className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
+                                value={item.cartNumber}
+                              />
+                              <span className="font-semibold" onClick={handleChange}>+</span>
+                            </div>
+                            <div className="pr-8 ">
+                              <span className="text-xs font-medium">
+                                ${item.price * item.cartNumber}
+                              </span>
+                            </div>
+                            {/* onClick={() => handleRemoveFromCart(item.id)} */}
+                            <div>
+                              <button type="button" onClick={(e) => handleCloseButton(e, item.id)}><i className="fa fa-close text-xs font-medium"></i></button>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                      <div className="flex justify-center items-center">
-                        <div className="pr-8 flex ">
-                          <span className="font-semibold">-</span>
-                          <input
-                            type="text"
-                            onChange={(e) => handleChange(e, item.id)}
-                            // onChange={(e) => setCounter(e.target.value)}
-                            className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
-                            value={item.cartNumber}
-                          />
-                          <span className="font-semibold" onClick={handleChange}>+</span>
-                        </div>
-                        <div className="pr-8 ">
-                          <span className="text-xs font-medium">
-                            ${item.price * item.cartNumber}
-                          </span>
-                        </div>
-                        {/* onClick={() => handleRemoveFromCart(item.id)} */}
-                        <div>
-                          <button type="button" onClick={(e) => handleCloseButton(e, item.id)}><i className="fa fa-close text-xs font-medium"></i></button>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                      ))}
+                    </>
+                  )}
 
                   {/* end here */}
 
