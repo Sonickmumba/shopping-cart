@@ -61,6 +61,28 @@ function App() {
     setCartData(updatedCartData);
   }
 
+  const handleIncrement = (itemId) => {
+    const updatedCartData = cartData.map((item) => {
+      if (item.id === itemId && item.cartNumber < 10) {
+        return { ...item, cartNumber: item.cartNumber + 1 };
+      }
+      return item;
+    });
+
+    setCartData(updatedCartData);
+  };
+
+  const handleDecrement = (itemId) => {
+    const updatedCartData = cartData.map((item) => {
+      if (item.id === itemId && item.cartNumber > 0) {
+        return { ...item, cartNumber: item.cartNumber - 1 };
+      }
+      return item;
+    });
+
+    setCartData(updatedCartData);
+  };
+
   return (
     <>
       <BrowserRouter>
@@ -81,7 +103,7 @@ function App() {
             />
             <Route
               path="/carts"
-              element={<Carts cartData={cartData} handleCloseButton={handleCloseButton} />}
+              element={<Carts cartData={cartData} handleCloseButton={handleCloseButton} handleIncrement={handleIncrement} handleDecrement={handleDecrement}/>}
             />
           </Routes>
         </div>
