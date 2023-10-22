@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Carts = ({ cartData, handleCloseButton }) => {
+const Carts = ({ cartData, handleCloseButton, handleIncrement, handleDecrement}) => {
   // const totalItems = cartData ? cartData.reduce((acc, item) => acc + item.cartNumber, 0) : 0;
   const totalCost = cartData
     ? cartData.reduce((cost, item) => cost + item.price * item.cartNumber, 0)
@@ -9,7 +9,7 @@ const Carts = ({ cartData, handleCloseButton }) => {
 
   const handleChange = (e, id) => {
     e.preventDefault();
-    console.log(id);
+    console.log(e.target.value);
   }
 
   return (
@@ -45,7 +45,7 @@ const Carts = ({ cartData, handleCloseButton }) => {
                           </div>
                           <div className="flex justify-center items-center">
                             <div className="pr-8 flex ">
-                              <span className="font-semibold">-</span>
+                              <span className="font-semibold" onClick={() => handleDecrement(item.id)}>-</span>
                               <input
                                 type="text"
                                 onChange={(e) => handleChange(e, item.id)}
@@ -53,7 +53,7 @@ const Carts = ({ cartData, handleCloseButton }) => {
                                 className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
                                 value={item.cartNumber}
                               />
-                              <span className="font-semibold" onClick={handleChange}>+</span>
+                              <span className="font-semibold" onClick={() => handleIncrement(item.id)}>+</span>
                             </div>
                             <div className="pr-8 ">
                               <span className="text-xs font-medium">
