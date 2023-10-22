@@ -48,8 +48,6 @@ const Carts = ({ cartData, handleCloseButton, handleIncrement, handleDecrement})
                               <span className="font-semibold" onClick={() => handleDecrement(item.id)}>-</span>
                               <input
                                 type="text"
-                                // onChange={(e) => handleChange(e, item.id)}
-                                // onChange={(e) => setCounter(e.target.value)}
                                 className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
                                 value={item.cartNumber}
                                 readOnly
