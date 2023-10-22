@@ -75,19 +75,19 @@ function App() {
     setCartData(updatedCartData);
   };
 
-  // const handleDecrement = (itemId) => {
-  //   // Find the item in the cartData array
-  //   const updatedCartData = cartData.map((item) => {
-  //     if (item.id === itemId) {
-  //       // Increment the cartNumber for the specific item
-  //       return { ...item, cartNumber: item.cartNumber - 1 };
-  //     }
-  //     return item;
-  //   });
+  const handleDecrement = (itemId) => {
+    // Find the item in the cartData array
+    const updatedCartData = cartData.map((item) => {
+      if (item.id === itemId) {
+        // Increment the cartNumber for the specific item
+        return { ...item, cartNumber: item.cartNumber - 1 };
+      }
+      return item;
+    });
 
-  //   // Update the state with the new cart data
-  //   setCartData(updatedCartData);
-  // };
+    // Update the state with the new cart data
+    setCartData(updatedCartData);
+  };
 
   return (
     <>
