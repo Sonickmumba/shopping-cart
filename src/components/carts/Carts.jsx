@@ -7,11 +7,6 @@ const Carts = ({ cartData, handleCloseButton, handleIncrement, handleDecrement})
     ? cartData.reduce((cost, item) => cost + item.price * item.cartNumber, 0)
     : 0;
 
-  // const handleChange = (e, id) => {
-  //   e.preventDefault();
-  //   console.log(e.target.value);
-  // }
-
   return (
     <div className="h-screen bg-gray-300">
       <div className="py-12">
