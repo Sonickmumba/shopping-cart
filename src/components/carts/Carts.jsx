@@ -23,7 +23,6 @@ const Carts = ({ cartData, handleCloseButton }) => {
                   {cartData.length === 0 ? (<h1>Your cart is empty!</h1>) : (
                     <>
                       <h1 className="text-xl font-medium ">Shopping Cart</h1>
-                      {/* start */}
                       {cartData.map((item) => (
                         <div
                           key={item.id}
